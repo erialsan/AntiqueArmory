@@ -131,7 +131,7 @@ public class ClientProxy extends CommonProxy {
         }
 
         for (IModifier modifier : ArmoryRegistry.getAllArmorModifiers()) {
-            if (modifier == TinkerModifiers.modCreative || modifier == ArmorModifiers.modExtraTrait) {
+            if (modifier == TinkerModifiers.modCreative || modifier == TinkerModifiers.modIncognito || modifier == ArmorModifiers.modExtraTrait) {
                 continue;
             }
 

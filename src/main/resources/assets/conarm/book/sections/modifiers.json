@@ -1,4 +1,5 @@
-[{
+[
+  {
     "type": "armormodifier",
     "data": "modifiers/speedy.json"
   },
@@ -89,5 +90,9 @@
   {
     "type": "armormodifier",
     "data": "modifiers/extratrait_armor.json"
+  },
+  {
+    "type": "armormodifier",
+    "data": "modifiers/incognito_armor.json"
   }
 ]

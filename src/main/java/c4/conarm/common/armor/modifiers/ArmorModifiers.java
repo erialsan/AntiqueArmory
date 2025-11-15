@@ -185,6 +185,11 @@ public class ArmorModifiers {
 
         ArmoryRegistry.registerModifier(TinkerModifiers.modCreative.getIdentifier(), TinkerModifiers.modCreative);
         RecipeMatchHolder.addItem(TinkerModifiers.modCreative, TinkerCommons.matCreativeModifier, 1, 1);
+
+        //The modifiers being hidden is already handled by Tinkers' Antique
+        //TODO: Be sure that equipped armor also has the modifier textures hidden like the items
+        ArmoryRegistry.registerModifier(TinkerModifiers.modIncognito.getIdentifier(), TinkerModifiers.modIncognito);
+        RecipeMatchHolder.addItem(TinkerModifiers.modIncognito, new ItemStack(Blocks.SPONGE, 1, 1), 1, 1);
     }
 
     private static Map<String, ModExtraArmorTrait> extraTraitLookup = new HashMap<>();
@@ -217,9 +222,9 @@ public class ArmorModifiers {
 
     @SuppressWarnings("unchecked")
     private static <T extends Item & IToolPart> void registerExtraTraitModifiers(Material material, ArmorCore armor, PartMaterialType partMaterialType, IToolPart armorPart) {
-        if(armorPart instanceof Item) {
+        if (armorPart instanceof Item) {
             Collection<ITrait> traits = partMaterialType.getApplicableTraitsForMaterial(material);
-            if(!traits.isEmpty()) {
+            if (!traits.isEmpty()) {
                 final Collection<ITrait> traits2 = ImmutableSet.copyOf(traits);
                 String identifier = ModExtraTrait.generateIdentifier(material, traits2);
                 ModExtraArmorTrait mod = extraTraitLookup.computeIfAbsent(identifier, id -> new ModExtraArmorTrait(material, traits2, identifier));
