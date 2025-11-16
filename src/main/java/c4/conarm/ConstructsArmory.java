@@ -36,7 +36,7 @@ public class ConstructsArmory {
     private static final boolean DEBUG = false;
 
     public static final String MOD_ID = Tags.MOD_ID;
-    public static final String MOD_NAME = Tags.NAME;
+    public static final String MOD_NAME = Tags.MOD_NAME;
     public static final String MOD_VERSION = Tags.VERSION;
 
     @SidedProxy(clientSide = "c4.conarm.proxy.ClientProxy", serverSide = "c4.conarm.proxy.CommonProxy")
