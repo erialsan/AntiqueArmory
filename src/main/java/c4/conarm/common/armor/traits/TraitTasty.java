@@ -62,7 +62,7 @@ public class TraitTasty extends AbstractArmorTrait {
                     eatToRepair(armor, player);
                 }
             } else {
-                chance += (5 - foodStats.getFoodLevel()) * 0.0025f;
+                chance += (10 - foodStats.getFoodLevel()) * 0.0025f;
                 chance -= foodStats.getSaturationLevel() * 0.005f;
 
                 if (random.nextFloat() < chance) {
