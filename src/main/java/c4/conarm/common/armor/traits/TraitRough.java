@@ -44,7 +44,10 @@ public class TraitRough extends AbstractArmorTrait {
         int durability = ToolHelper.getCurrentDurability(armor);
         int maxDurability = ToolHelper.getMaxDurability(armor);
 
-        return Math.log((maxDurability - durability) / 72d + 1d) * 2;
+        if (maxDurability == 0) return 0;
+        double percentLost = (maxDurability - durability) / (double) maxDurability;
+        // Scale to match original max (~5.4 at 100% lost)
+        return Math.log(percentLost * 14.875 + 1d) * 2;
     }
 
     @Override
