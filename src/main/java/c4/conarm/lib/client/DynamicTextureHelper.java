@@ -205,7 +205,7 @@ public class DynamicTextureHelper {
                 break;
             }
         }
-        if (incognito) {
+        if (!incognito) {
             for (IModifier modifier : modifiers) {
 
                 TextureMap map = Minecraft.getMinecraft().getTextureMapBlocks();
