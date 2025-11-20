@@ -32,6 +32,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EntityDamageSource;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -311,11 +312,19 @@ public class ArmorEvents {
         ItemStack armor = event.itemStack;
 
         NBTTagList list = TagUtil.getTraitsTagList(armor);
-        for(int i = 0; i < list.tagCount(); i++) {
+        for (int i = 0; i < list.tagCount(); i++) {
             ITrait trait = TinkerRegistry.getTrait(list.getStringTagAt(i));
-            if(trait != null) {
+            if (trait != null) {
                 trait.onRepair(armor, event.amount);
             }
+        }
+    }
+
+    // Prevents repairing the armor on anvils, this is carried over from tools in Tinkers' Antique
+    @SubscribeEvent
+    public void onAnvilRepair(AnvilUpdateEvent event) {
+        if (event.getLeft().getItem() instanceof TinkersArmor || event.getRight().getItem() instanceof TinkersArmor) {
+            event.setCanceled(true);
         }
     }
 }
