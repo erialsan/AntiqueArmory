@@ -14,6 +14,10 @@ conarm.general.leveling.basexp=基础XP消耗
 conarm.general.leveling.basexp.tooltip=设置护甲所需要消耗的基础XP（经验）
 conarm.general.leveling.levelingmultiplier=等级乘数
 conarm.general.leveling.levelingmultiplier.tooltip=决定每个等级所需要消耗的经验
+conarm.general.leveling.xpgaincap=XP获取上限
+conarm.general.leveling.xpgaincap.tooltip=单次可获取的最大经验
+conarm.general.leveling.damagetoxp=伤害-经验转化系数
+conarm.general.leveling.damagetoxp.tooltip=用于计算伤害转化的经验值系数（例如0.25表示25%的伤害将转化为经验值）
 
 #################
 #     Blocks    #
@@ -136,6 +140,10 @@ modifier.combustible_armor.name=易燃
 modifier.combustible_armor.desc=§o这个护甲在着火！§r\n当玩家着火时会蔓延至周围生物。
 modifier.dense_armor.name=modifier.dense.name
 modifier.dense_armor.desc=§o更…硬…§r\n护甲耐久越低，可以持续使用的时间就越长。
+modifier.desperation_armor.name=孤注一掷
+modifier.desperation_armor.desc=§o虚惊一场！§r\n当你的生命值低于最大生命值的一半时，你的护甲会变得更强大。
+modifier.depth_explorer_armor.name=深度探索者
+modifier.depth_explorer_armor.desc=§o地心之旅！§r\n你在地下深处时，你的护甲会变得更强大。
 modifier.dramatic_armor.name=终焉
 modifier.dramatic_armor.desc=§o屏住呼吸！§r\n它会在紧要关头拉你一把吗？谁知道呢！
 modifier.duritos_ranch_armor.name=modifier.duritos.name
@@ -217,6 +225,8 @@ modifier.glowing_armor.name=荧光
 modifier.glowing_armor.desc=§o闪闪发光§r\n当你行走在黑暗的地方时，靴子将会消耗耐久点亮周围。
 modifier.high_stride_armor.name=高跳
 modifier.high_stride_armor.desc=§o野蛮的标志。§r\n你能跳得更高。
+modifier.incognito_armor.name=无痕
+modifier.incognito_armor.desc=§o冲刷干净！§r\n隐藏强化，使工具或武器看起来更整洁。
 modifier.mending_armor.name=modifier.mending_moss.name
 modifier.mending_armor.desc=§o它是活的！§r\n它会悄悄窃取玩家身上的经验来修复自身耐久。
 modifier.mending_armor.extra=容纳XP：%d
